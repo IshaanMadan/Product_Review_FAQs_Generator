@@ -1,0 +1,39 @@
+<script>
+$('#records_table').click(function(){
+  $("#records_table").show();
+});
+
+
+$('#faqBtn').click(function()
+    {   console.log("btn")
+        $('#records_table > tbody').empty();
+        {% comment %} $('#records_table').empty();; {% endcomment %}
+
+        $("#circle").show();
+        $("#faqBtn").hide();
+        var textboxvalue = $('#review').val();
+        console.log(textboxvalue)
+        $.ajax(
+        {
+            type: "POST",
+            url: 'http://127.0.0.1:8000/review',
+            data: {doc: textboxvalue},
+            success: function(result)
+            {
+                $("#records_table").show();
+                $("#circle").hide();
+                $("#faqBtn").show();
+
+                console.log(result)
+        var trHTML = '';
+        $.each(result, function (i, item) {
+            {% comment %} trHTML += '<tr><td>' + i + '</td><td>' + item + '</td><td>'+'</td></tr>' ; {% endcomment %}
+            trHTML += '<tr><td>' + i + '</td><td>' + item + '</td></tr>' ;
+
+        });
+        $('#records_table').append(trHTML);
+    }
+        });
+    });
+
+</script>
