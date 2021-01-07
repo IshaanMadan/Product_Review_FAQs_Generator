@@ -5,40 +5,83 @@ $('#records_table').click(function () {
 
 $('#faqBtn').click(function () {
     console.log("btn")
-    var textboxvalue = $('#review').val();
-    console.log(textboxvalue)
-    console.log(textboxvalue.length)
-
-    if ($.trim(textboxvalue).length > 0) {
-
-        $('#records_table > tbody').empty();
-
-        $("#circle").show();
-        $("#faqBtn").hide();
-
+    var d = $(this).attr("data-reviewType");
+    if (d == 'BERT') {
+        console.log(d)
+        var textboxvalue = $('#review').val();
         console.log(textboxvalue)
-        $.ajax(
-            {
-                type: "POST",
-                url: 'http://127.0.0.1:8000/review',
-                data: { doc: textboxvalue },
-                success: function (result) {
-                    $("#records_table").show();
-                    $("#circle").hide();
-                    $("#faqBtn").show();
+        console.log(textboxvalue.length)
 
-                    console.log(result)
-                    var trHTML = '';
-                    $.each(result, function (i, item) {
-                        trHTML += '<tr><td>' + i + '</td><td>' + item + '</td></tr>';
+        if ($.trim(textboxvalue).length > 0) {
 
-                    });
-                    $('#records_table').append(trHTML);
-                }
-            });
+            $('#records_table > tbody').empty();
+
+            $("#circle").show();
+            $("#faqBtn").hide();
+
+            console.log(textboxvalue)
+            $.ajax(
+                {
+                    type: "POST",
+                    url: 'http://127.0.0.1:8000/api/review',
+                    data: { doc: textboxvalue },
+                    success: function (result) {
+                        $("#records_table").show();
+                        $("#circle").hide();
+                        $("#faqBtn").show();
+
+                        console.log(result)
+                        var trHTML = '';
+                        $.each(result, function (i, item) {
+                            trHTML += '<tr><td>' + i + '</td><td>' + item + '</td></tr>';
+
+                        });
+                        $('#records_table').append(trHTML);
+                    }
+                });
+        }
+        else {
+            $('#records_table > tbody').empty();
+
+        }
     }
     else {
-        $('#records_table > tbody').empty();
+        console.log(d)
+        var textboxvalue = $('#review').val();
+        console.log(textboxvalue)
+        console.log(textboxvalue.length)
 
+        if ($.trim(textboxvalue).length > 0) {
+
+            $('#records_table > tbody').empty();
+
+            $("#circle").show();
+            $("#faqBtn").hide();
+
+            console.log(textboxvalue)
+            $.ajax(
+                {
+                    type: "POST",
+                    url: 'http://127.0.0.1:8000/api/ditillbertreview',
+                    data: { doc: textboxvalue },
+                    success: function (result) {
+                        $("#records_table").show();
+                        $("#circle").hide();
+                        $("#faqBtn").show();
+
+                        console.log(result)
+                        var trHTML = '';
+                        $.each(result, function (i, item) {
+                            trHTML += '<tr><td>' + i + '</td><td>' + item + '</td></tr>';
+
+                        });
+                        $('#records_table').append(trHTML);
+                    }
+                });
+        }
+        else {
+            $('#records_table > tbody').empty();
+
+        }
     }
 });

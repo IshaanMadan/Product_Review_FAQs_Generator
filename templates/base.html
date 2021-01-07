@@ -24,9 +24,9 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><b>Review FAQs Generator<b></a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      {% comment %} <li><a href="#">Page 1</a></li> {% endcomment %}
+    <ul class="nav navbar-nav" id="menu">
+      <li><a href="/review">BERT</a></li>
+      <li><a href="/distillbert">DistilBERT</a></li>
       {% comment %} <li><a href="#">Page 2</a></li> {% endcomment %}
       {% comment %} <li><a href="#">Page 3</a></li> {% endcomment %}
     </ul>
@@ -35,7 +35,13 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
    {%block body%}
 
 {% endblock body %}
+
 </body>
+<script>
+$('#menu').on('click','li', function(){
+   $(this).addClass('active').siblings().removeClass('active');
+});
+</script>
 </html>
 
 

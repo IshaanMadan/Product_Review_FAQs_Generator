@@ -7,7 +7,7 @@ import sys
 import warnings
 warnings.filterwarnings("ignore")
 from . constants import *
-from . transformers import *
+from . transformers_services import *
 
 tf.keras.backend.clear_session()
 with open("main_model/tokenizer_data.pkl", 'rb') as f:
