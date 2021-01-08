@@ -3,18 +3,9 @@ assert tf.__version__.startswith('2')
 tf.random.set_seed(1234)
 import sys
 sys.path.append('/content/BERT-SQuAD')
-
-# !pip install tensorflow-datasets==1.2.0
-# !pip install transformers
 import tensorflow_datasets as tfds
-
 import os
 import re
-# import numpy as np
-
-# import matplotlib.pyplot as plt
-
-
 
 def scaled_dot_product_attention(query, key, value, mask):
   """Calculate the attention weights. """

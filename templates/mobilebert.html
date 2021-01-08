@@ -7,12 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{%static 'css/main.css'%}">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
 </head>
 
 <body>
@@ -21,22 +18,24 @@
     <div align = "center">  
       <h1><b>Product Review FAQs Generator<b></h1>
       <h4>(For mobiles and earphones only)</h4>
+
       <br>
-      <h3><b>DistilBERT model loaded</b></h3>
-      <div class="container" style="text-align:left">
-        <h4><b>Title: </b>DistilBERT, a distilled version of BERT</h4>
-        <h4><b>Advantages: </b>Smaller, faster, cheaper and lighter than BERT</h4>
-        <h4><b>Disadvanges: </b>Performance degraded by 5% when compared with BERT</h4>
-        <h4><b>Size: </b>265 MB</h4>
-      </div>
+        <h3><b>MobileBERT model loaded</b></h3>
+         <div class="container" style="text-align:left">
+      <h4><b>Title: </b>MobileBERT is Task-Agnostic Compression of BERT </h4>
+      <h4><b>Advantages: </b>MobileBERT is smaller, faster than original BERT. Also 4% better in terms of performance when compared with DistilBERT</h4>
+      <h4><b>Disadvanges: </b>Its a complex model hence difficult to fine tune on cusotom dataset.Less accurate compared with BERT and DistilBERT </h4>
+      <h4><b>Size: </b>95 MB</h4>
+</div>
       <h2>Enter your Review</h2>
       <br>
       <textarea placeholder="Enter review" cols="35" rows="5" id='review' style='box-sizing: border-box;padding-left: 10px;padding-right: 10px;'></textarea>
-      <br><br>    
+      <br><br>
       <div class="loader" id='circle' style="display:none"></div>
-      <button type="button" class="btn_color" id='faqBtn' data-reviewType="DISTILLBERT"><b>Generate FAQs </b>
-      </button> 
+      <button type="button" class="btn_color" id='faqBtn' data-reviewType="MOBILEBERT"><b>Generate FAQs </b>
+      </button>
       <div class="toshow" >
+
         <tbody>
           <table id="records_table" border='1' class="styled-table" style="display:none">
             <thead>
@@ -51,7 +50,7 @@
         </tbody>
       </div>
     </div>
-  <form>  
+  <form> 
 </body>
 <script src="{% static 'js/main.js' %}" type="text/javascript"></script>  
 {%endblock body%}
