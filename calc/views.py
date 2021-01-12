@@ -9,7 +9,7 @@ import sys
 import warnings
 warnings.filterwarnings("ignore")
 from . transformers_services import *
-sys.path.append('main_model/BERT-SQuAD')
+sys.path.append('main_model/bertSquad')
 from bert import QA
 import os
 import re
