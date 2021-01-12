@@ -21,6 +21,7 @@ conda create --name <env_name> --file requirements.txt
 ```
 python3 -m venv env
 source env/bin/activate
+pip install tensorflow
 pip install -r requirements.txt
 ```
 
@@ -34,6 +35,6 @@ python3 manage.py runserver
 
 <b> Version  </b>
 
-Python 3.8.5
-pip 20.2.4
+Python 3.6.9
+pip 20.3.3
 
