@@ -2,13 +2,12 @@ absl-py==0.10.0
 asgiref==3.3.1
 astunparse==1.6.3
 attrs==20.3.0
-boto3==1.16.51
-botocore==1.19.51
+boto3==1.16.52
+botocore==1.19.52
 cachetools==4.2.0
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
-dataclasses==0.8
 dill==0.3.3
 Django==3.1.5
 filelock==3.0.12
@@ -31,6 +30,7 @@ numpy==1.19.5
 oauthlib==3.1.0
 opt-einsum==3.3.0
 packaging==20.8
+pkg-resources==0.0.0
 promise==2.3
 protobuf==3.14.0
 psutil==5.8.0
@@ -44,7 +44,7 @@ regex==2020.11.13
 requests==2.25.1
 requests-oauthlib==1.3.0
 rsa==4.7
-s3transfer==0.3.3
+s3transfer==0.3.4
 sacremoses==0.0.43
 sentencepiece==0.1.91
 six==1.15.0
