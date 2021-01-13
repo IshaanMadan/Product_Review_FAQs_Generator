@@ -1,3 +1,8 @@
+// const  SERVER_URL='http://127.0.0.1:8000';
+const  SERVER_URL='http://103.206.101.253:8000';
+// const  SERVER_URL='http://0.0.0.0:8000';
+
+
 $('#records_table').click(function () {
     $("#records_table").show();
 });
@@ -23,7 +28,7 @@ $('#faqBtn').click(function () {
             $.ajax(
                 {
                     type: "POST",
-                    url: 'http://127.0.0.1:8000/api/review',
+                    url: SERVER_URL+'/api/review',
                     data: { doc: textboxvalue },
                     success: function (result) {
                         $("#records_table").show();
@@ -62,7 +67,7 @@ $('#faqBtn').click(function () {
             $.ajax(
                 {
                     type: "POST",
-                    url: 'http://127.0.0.1:8000/api/ditillbertreview',
+                    url: SERVER_URL+'/api/ditillbertreview',
                     data: { doc: textboxvalue },
                     success: function (result) {
                         $("#records_table").show();
@@ -101,7 +106,7 @@ $('#faqBtn').click(function () {
             $.ajax(
                 {
                     type: "POST",
-                    url: 'http://127.0.0.1:8000/api/mobilebertreview',
+                    url: SERVER_URL+'/api/mobilebertreview',
                     data: { doc: textboxvalue },
                     success: function (result) {
                         $("#records_table").show();
